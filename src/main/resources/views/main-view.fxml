@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.MainController">
+
+    <top>
+        <VBox spacing="10" alignment="CENTER" prefHeight="100">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="PROYECTO DE GRAFOS"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10" alignment="CENTER">
+
+                <TextField fx:id="sourceField"
+                           promptText="Source"/>
+
+                <TextField fx:id="targetField"
+                           promptText="Target"/>
+
+                <TextField fx:id="weightField"
+                           promptText="Weight"/>
+
+                <Button text="Agregar Arista"
+                        onAction="#handleAddEdge"/>
+
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+
+        <VBox spacing="15" alignment="CENTER">
+
+            <HBox spacing="10" alignment="CENTER">
+
+                <Button text="Mostrar Grafo"
+                        onAction="#handleShowGraph"/>
+
+                <Button text="Cargar CSV"
+                        onAction="#handleLoadFile"/>
+
+                <Button text="¿Es Simple?"
+                        onAction="#handleSimpleGraph"/>
+
+                <Button text="¿Es Completo?"
+                        onAction="#handleCompleteGraph"/>
+
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+
+                <TextField fx:id="degreeField"
+                           promptText="Nodo"/>
+
+                <Button text="Calcular Grado"
+                        onAction="#handleDegree"/>
+
+            </HBox>
+
+            <TextArea fx:id="outputArea"
+                      prefWidth="700"
+                      prefHeight="350"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
