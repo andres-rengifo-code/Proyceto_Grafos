@@ -1,75 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.MainController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="controllers.MainController">
 
     <top>
-        <VBox spacing="10" alignment="CENTER" prefHeight="100">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
 
-            <Label text="PROYECTO DE GRAFOS"
-                   style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <VBox spacing="10">
 
-            <HBox spacing="10" alignment="CENTER">
+            <Label fx:id="graphNameLabel" text="Grafo" />
 
-                <TextField fx:id="sourceField"
-                           promptText="Source"/>
-
-                <TextField fx:id="targetField"
-                           promptText="Target"/>
-
-                <TextField fx:id="weightField"
-                           promptText="Weight"/>
-
-                <Button text="Agregar Arista"
-                        onAction="#handleAddEdge"/>
-
-            </HBox>
         </VBox>
+
     </top>
 
     <center>
 
-        <VBox spacing="15" alignment="CENTER">
+        <VBox prefHeight="510.0" prefWidth="530.0" spacing="10">
 
-            <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="sourceField" promptText="Origen" />
 
-                <Button text="Mostrar Grafo"
-                        onAction="#handleShowGraph"/>
+            <TextField fx:id="targetField" promptText="Destino" />
 
-                <Button text="Cargar CSV"
-                        onAction="#handleLoadFile"/>
+            <TextField fx:id="weightField" promptText="Peso" />
 
-                <Button text="¿Es Simple?"
-                        onAction="#handleSimpleGraph"/>
+            <Button onAction="#handleAddEdge" text="Agregar Arista" />
 
-                <Button text="¿Es Completo?"
-                        onAction="#handleCompleteGraph"/>
+            <Button onAction="#handleShowGraph" text="Mostrar Grafo" />
 
-            </HBox>
+            <Button onAction="#handleLoadFile" text="Cargar Archivo" />
 
-            <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="degreeField" promptText="Nodo" />
 
-                <TextField fx:id="degreeField"
-                           promptText="Nodo"/>
+            <Button onAction="#handleDegree" text="Calcular Grado" />
 
-                <Button text="Calcular Grado"
-                        onAction="#handleDegree"/>
+            <Button onAction="#handleSimpleGraph" text="Verificar Simple" />
 
-            </HBox>
+            <Button onAction="#handleCompleteGraph" text="Verificar Completo" />
 
-            <TextArea fx:id="outputArea"
-                      prefWidth="700"
-                      prefHeight="350"/>
+            <TextArea fx:id="outputArea" prefHeight="250" />
 
         </VBox>
 
     </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#handleBackHome" text="Volver Al Inicio" BorderPane.alignment="CENTER" />
+   </bottom>
 
 </BorderPane>
