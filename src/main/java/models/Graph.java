@@ -8,7 +8,7 @@ import java.util.*;
 public class Graph {
 
 
-    String name;
+    String name; // Nombre que se le asigna al Grafo
     public List<String[]> edges = new ArrayList<>();
     Set<String> vertices = new HashSet<>();
 
@@ -16,35 +16,37 @@ public class Graph {
         this.name = name;
     }
 
+    //Metodo utilizado para agregar aristas al Grafo
     public void addEdges(String source, String target , int weight) {
-        edges.add(new String[]{ source,target, String.valueOf(weight)});
-        vertices.add(source);
-        vertices.add(target);
+        edges.add(new String[]{ source,target, String.valueOf(weight)});// Agrega aristas a la lista
+        vertices.add(source); //Agrega vertices a la lista
+        vertices.add(target); //Agrega vertices a la lista
     }
 
-    public void CreateGraphManual(){
-        boolean stop = false;
-        Scanner keyboard = new Scanner(System.in);
-        while (!stop){
-            System.out.print("Enter the source : ");
-            String s = keyboard.next();
+//    public void CreateGraphManual(){
+//        boolean stop = false;
+//        Scanner keyboard = new Scanner(System.in);
+//        while (!stop){
+//            System.out.print("Enter the source : ");
+//            String s = keyboard.next();
+//
+//            System.out.print("Enter the target : ");
+//            String t = keyboard.next();
+//
+//            System.out.print("Enter the weight : ");
+//            int w = keyboard.nextInt();
+//
+//            addEdges( s, t, w);
+//
+//            System.out.print("Do you want to add another adge ? (yes/not): ");
+//            String cont = keyboard.next();
+//            if (!cont.equals("yes")){
+//                stop = true;
+//            }
+//        }
+//    }
 
-            System.out.print("Enter the target : ");
-            String t = keyboard.next();
-
-            System.out.print("Enter the weight : ");
-            int w = keyboard.nextInt();
-
-            addEdges( s, t, w);
-
-            System.out.print("Do you want to add another adge ? (yes/not): ");
-            String cont = keyboard.next();
-            if (!cont.equals("yes")){
-                stop = true;
-            }
-        }
-    }
-
+    //Metodo para insertar un Grafo por medio de archivo de texto
     public void InsertTextFile(String path) {
         try (BufferedReader read = new BufferedReader(new FileReader(path))) {
             String line;
@@ -64,12 +66,13 @@ public class Graph {
         }
 
     }
-    public void PrintGraph(){
-        System.out.println("Name : " + name);
-        for (String[] e : edges){
-            System.out.println(e[0]+"->"+e[1]+"("+e[2]+")");
-        }
-    }
+
+//    public void PrintGraph(){
+//        System.out.println("Name : " + name);
+//        for (String[] e : edges){
+//            System.out.println(e[0]+"->"+e[1]+"("+e[2]+")");
+//        }
+//    }
 
 
     public int  calculateDegree(String nodo){
@@ -117,11 +120,11 @@ public class Graph {
 
         }
 
-
         return  unions.size() == max_edges;
 
     }
 
+    // Metodo encargado de retornar el nombre de el grafo
     public String getName() {
         return name;
     }
