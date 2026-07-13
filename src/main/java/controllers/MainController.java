@@ -198,4 +198,56 @@ public class MainController {
             );
         }
     }
+
+    // Metodo para verificar si el grafo es un árbol
+    @FXML
+    public void handleTreeGraph() {
+
+        boolean tree = graph.isTree();
+
+        outputArea.appendText(
+                "¿Es árbol?: "
+                        + tree
+                        + "\n"
+        );
+    }
+
+    // Metodo para verificar si el grafo es un bosque
+    @FXML
+    public void handleForestGraph() {
+
+        boolean forest = graph.isforest();
+
+        outputArea.appendText(
+                "¿Es bosque?: "
+                        + forest
+                        + "\n"
+        );
+    }
+
+    // Metodo para verificar si existe un camino de Euler
+    @FXML
+    public void handleEulerPath() {
+
+        boolean path = graph.hasEulerPath();
+
+        outputArea.appendText(
+                "¿Tiene camino de Euler?: "
+                        + path
+                        + "\n"
+        );
+    }
+
+    // Metodo para verificar si existe un circuito de Euler
+    @FXML
+    public void handleEulerCircuit() {
+
+        boolean circuit = graph.hasEulerCircuit();
+
+        outputArea.appendText(
+                "¿Tiene circuito de Euler?: "
+                        + circuit
+                        + "\n"
+        );
+    }
 }

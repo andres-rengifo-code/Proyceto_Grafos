@@ -13,7 +13,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/views/home.fxml"));
 
-        Scene scene = new Scene(root, 900, 600);
+        Scene scene = new Scene(root, 900, 900);
 
         stage.setTitle("Proyecto de Grafos");
         stage.setScene(scene);

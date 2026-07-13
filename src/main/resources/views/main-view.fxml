@@ -43,7 +43,15 @@
 
             <Button onAction="#handleCompleteGraph" text="Verificar Completo" />
 
-            <TextArea fx:id="outputArea" prefHeight="250" />
+            <Button onAction="#handleTreeGraph" text="Verificar Árbol" />
+
+            <Button onAction="#handleForestGraph" text="Verificar Bosque" />
+
+            <Button onAction="#handleEulerPath" text="Verificar Camino de Euler" />
+
+            <Button onAction="#handleEulerCircuit" text="Verificar Circuito de Euler" />
+
+            <TextArea fx:id="outputArea" prefHeight="250"/>
 
         </VBox>
 
