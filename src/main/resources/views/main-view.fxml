@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="controllers.MainController">
+
+    <top>
+
+        <VBox spacing="10">
+
+            <Label fx:id="graphNameLabel" text="Grafo" />
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <VBox prefHeight="510.0" prefWidth="530.0" spacing="10">
+
+            <TextField fx:id="sourceField" promptText="Origen" />
+
+            <TextField fx:id="targetField" promptText="Destino" />
+
+            <TextField fx:id="weightField" promptText="Peso" />
+
+            <Button onAction="#handleAddEdge" text="Agregar Arista" />
+
+            <Button onAction="#handleShowGraph" text="Mostrar Grafo" />
+
+            <Button onAction="#handleLoadFile" text="Cargar Archivo" />
+
+            <TextField fx:id="degreeField" promptText="Nodo" />
+
+            <Button onAction="#handleDegree" text="Calcular Grado" />
+
+            <Button onAction="#handleSimpleGraph" text="Verificar Simple" />
+
+            <Button onAction="#handleCompleteGraph" text="Verificar Completo" />
+
+            <Button onAction="#handleTreeGraph" text="Verificar Árbol" />
+
+            <Button onAction="#handleForestGraph" text="Verificar Bosque" />
+
+            <Button onAction="#handleEulerPath" text="Verificar Camino de Euler" />
+
+            <Button onAction="#handleEulerCircuit" text="Verificar Circuito de Euler" />
+
+            <TextArea fx:id="outputArea" prefHeight="250"/>
+
+        </VBox>
+
+    </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#handleBackHome" text="Volver Al Inicio" BorderPane.alignment="CENTER" />
+   </bottom>
+
+</BorderPane>
